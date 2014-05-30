@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brewery: MyString
+  name: MyString
+  style: MyString
+  price: MyString
+  abv: 9.99
+  Untapped_Beer_id: 
+
+two:
+  brewery: MyString
+  name: MyString
+  style: MyString
+  price: MyString
+  abv: 9.99
+  Untapped_Beer_id: 

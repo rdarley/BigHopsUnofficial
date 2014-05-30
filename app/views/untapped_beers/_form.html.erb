@@ -1,0 +1,37 @@
+<%= form_for(@untapped_beer) do |f| %>
+  <% if @untapped_beer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@untapped_beer.errors.count, "error") %> prohibited this untapped_beer from being saved:</h2>
+
+      <ul>
+      <% @untapped_beer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :beer_style %><br>
+    <%= f.text_field :beer_style %>
+  </div>
+  <div class="field">
+    <%= f.label :rating_score %><br>
+    <%= f.text_field :rating_score %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :untapped_id %><br>
+    <%= f.number_field :untapped_id %>
+  </div>
+  <div class="field">
+    <%= f.label :updated %><br>
+    <%= f.date_select :updated %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Listing untapped_beers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beer style</th>
+      <th>Rating score</th>
+      <th>Description</th>
+      <th>Untapped</th>
+      <th>Updated</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @untapped_beers.each do |untapped_beer| %>
+      <tr>
+        <td><%= untapped_beer.beer_style %></td>
+        <td><%= untapped_beer.rating_score %></td>
+        <td><%= untapped_beer.description %></td>
+        <td><%= untapped_beer.untapped_id %></td>
+        <td><%= untapped_beer.updated %></td>
+        <td><%= link_to 'Show', untapped_beer %></td>
+        <td><%= link_to 'Edit', edit_untapped_beer_path(untapped_beer) %></td>
+        <td><%= link_to 'Destroy', untapped_beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Untapped beer', new_untapped_beer_path %>

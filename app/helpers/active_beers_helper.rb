@@ -1,0 +1,2 @@
+module ActiveBeersHelper
+end

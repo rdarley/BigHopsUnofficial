@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beer_style: MyString
+  rating_score: 9.99
+  description: MyString
+  untapped_id: 1
+  updated: 2014-05-29
+
+two:
+  beer_style: MyString
+  rating_score: 9.99
+  description: MyString
+  untapped_id: 1
+  updated: 2014-05-29

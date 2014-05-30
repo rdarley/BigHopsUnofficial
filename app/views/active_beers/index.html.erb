@@ -1,0 +1,27 @@
+<h1>Listing active_beers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Beer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @active_beers.each do |active_beer| %>
+      <tr>
+        <td><%= active_beer.Location %></td>
+        <td><%= active_beer.Beer %></td>
+        <td><%= link_to 'Show', active_beer %></td>
+        <td><%= link_to 'Edit', edit_active_beer_path(active_beer) %></td>
+        <td><%= link_to 'Destroy', active_beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Active beer', new_active_beer_path %>

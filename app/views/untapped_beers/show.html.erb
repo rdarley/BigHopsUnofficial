@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Beer style:</strong>
+  <%= @untapped_beer.beer_style %>
+</p>
+
+<p>
+  <strong>Rating score:</strong>
+  <%= @untapped_beer.rating_score %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @untapped_beer.description %>
+</p>
+
+<p>
+  <strong>Untapped:</strong>
+  <%= @untapped_beer.untapped_id %>
+</p>
+
+<p>
+  <strong>Updated:</strong>
+  <%= @untapped_beer.updated %>
+</p>
+
+<%= link_to 'Edit', edit_untapped_beer_path(@untapped_beer) %> |
+<%= link_to 'Back', untapped_beers_path %>
