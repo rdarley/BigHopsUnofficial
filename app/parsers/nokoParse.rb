@@ -32,11 +32,15 @@ class ParseBigHops
 
   def add
     require 'net/http'
+    require 'uri'
+    uri = URI('http://localhost:3000')
+    session = Net::HTTP.start(uri.host, uri.port)
       beerMap = @beers[0].to_map
       puts "beer map"
       puts beerMap
-      postData = Net::HTTP.post_form(URI.parse('http://localhost:3000/beers.json'), beerMap)
-      puts postData.body
+      #need to add am auth token to this request
+      postData = session.post("/beers.json", beerMap.to_json)
+      puts postData
   end
 end
 
@@ -47,7 +51,8 @@ class Beer
     @name= name
     @style = style
     @price = price
-    @abv = abv
+    #this is changed to jsut retrun 5 becasue % isn't encoded right yet.
+    @abv = "5"
   end
 
   def to_s
