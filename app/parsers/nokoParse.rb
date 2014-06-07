@@ -36,12 +36,14 @@ class ParseBigHops
     uri = URI('http://localhost:3000')
     Net::HTTP.start(uri.host, uri.port) do |session|
       session.get("/")
-      beerMap = @beers[0].to_map
-      puts "beer map"
-      puts beerMap
-      #need to add am auth token to this request
-      postData = session.post("/beers.json", beerMap.to_json)
-      puts postData
+      @beers.each do |beer|
+	    beerMap = beer.to_map
+	    puts "beer map"
+	    puts beerMap.to_json
+	    #need to add am auth token to this request
+	    postData = session.post("/beers.json", beerMap.to_json, initheader={"Content-Type" =>"application/json"})
+	    puts postData
+	  end
     end
   end
 end
